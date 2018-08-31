@@ -5,10 +5,9 @@ from game import Game
 
 class CustomPlayer(GenericPlayer):
     def move(self):
-        ### EDIT CODE HERE ###
+        print(self.get_history())
         return Move.RIGHT_TO_LEFT
-        ### END CHANGE ###
 
 ### CHANGE THE NAME
-custom_player = CustomPlayer("name-of-your-bot")
+custom_player = CustomPlayer("black")
 ### END CHANGE

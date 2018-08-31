@@ -6,10 +6,10 @@ logger.setLevel("INFO")
 class GenericPlayer:
     def __init__(self, name):
         self.name = name
-        self._my_left_hand = 5
-        self._my_right_hand = 5
-        self._opponent_right_hand = 5
-        self._opponent_left_hand = 5
+        self._my_left_hand = 1
+        self._my_right_hand = 1
+        self._opponent_right_hand = 1
+        self._opponent_left_hand = 1
         self._history = []
         self._current_round = 0
         self._starting_player = None
@@ -26,11 +26,15 @@ class GenericPlayer:
             self._my_left_hand, self._my_right_hand = left, right
             return None
         if right > 0:
-            logger.debug("Player {} if decreasing RIGHT hand by {}.".format(self.name, right))
-            self._my_right_hand -= right
+            logger.debug("Player {} if increasing RIGHT hand by {}.".format(self.name, right))
+            self._my_right_hand += right
+            if self._my_right_hand >= 5:
+                self._my_right_hand = 0
         if left > 0:
-            logger.debug("Player {} if decreasing LEFT hand by {}.".format(self.name, left))
-            self._my_left_hand -= left
+            logger.debug("Player {} if increasing LEFT hand by {}.".format(self.name, left))
+            self._my_left_hand += left
+            if self._my_left_hand >= 5:
+                self._my_left_hand = 0
     
     def is_empty(self):
         return self._my_left_hand == 0 and self._my_right_hand == 0
