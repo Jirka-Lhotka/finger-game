@@ -2,7 +2,7 @@ import random
 import logging
 from moves import Move
 
-GAME_LIMIT = 2
+GAME_LIMIT = 1000
 
 logging.basicConfig()
 logger = logging.getLogger("game")

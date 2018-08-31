@@ -49,5 +49,12 @@ self.get_current_round() # Returns the number of current round
 self.get_starting_player() # Returns the name of the starting player
 ```
 
+### Testing
+For testing run the `match.py` script. In command line run:
+
+```
+python match.py
+```
+
 ### Matches
 There will be matches of each player against every other player. Each match will be 1000 rounds played. 
