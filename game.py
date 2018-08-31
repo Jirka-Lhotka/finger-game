@@ -51,6 +51,8 @@ class Game():
                 raise Exception("Player {} wants to switch hands to {} {} where one hand has more than 5 fingers.".format(current_player.name, current_player.get_my_left(), current_player.get_my_right()))
             elif move[0] == current_player.get_my_left() and move[1] == current_player.get_my_right():
                 raise Exception("Player {} wants to switch hands to {} {} which is the same as current status of {} {} fingers.".format(current_player.name, move[0], move[1], current_player.get_my_left(), current_player.get_my_right()))
+            elif move[0] == current_player.get_my_right() and move[1] == current_player.get_my_left():
+                raise Exception("Player {} wants to switch hands to {} {} which is just reflection of current status of {} {} fingers.".format(current_player.name, move[0], move[1], current_player.get_my_left(), current_player.get_my_right()))
 
     def play(self, first_player=None, second_player=None):
         self.current_round = 0

@@ -11,7 +11,7 @@ result = {
     "ties": 0
 }
 
-for i in range(0, 1000):
+for i in range(0, 100):
     print("===== GAME {} =====".format(i))
     winner = game.play(first_player=first_player, second_player=second_player)
     print("\n")

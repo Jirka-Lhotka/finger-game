@@ -17,6 +17,7 @@ This game is about writing a program that beats another program in a Finger game
     - Hitting with a hand that has 0 fingers.
     - Switching hands so that the sum after switching does not equal current sum.
     - Switching hands so that they are the same as they are now, e.g. 3 4 to 3 4, or 5 5 to 5 5.
+    - Switching hands so that they are only reflection of current status e.g. 3 4 to 4 3, or 1 2 to 2 1.
     - Switching hands so that one of the hands has more than 5 fingers, e.g. 3 4 to 6 1.
 - Returning incorrect data type in the `move` method.
 - Timeout of 1 second.
