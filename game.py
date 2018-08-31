@@ -58,10 +58,17 @@ class Game():
         self.current_round = 0
         logger.info("Starting game: {} vs {}".format(self.player_a.name, self.player_b.name))
         if first_player is not None and second_player is not None:
+            first_player.restart()
+            second_player.restart()
             current_player, next_player = first_player, second_player
         else:
+            self.player_a.restart()
+            self.player_b.restart()
             current_player, next_player = self.first_player()
+        logger.info("Current status for player {}: Left hand {}, Right hand {}".format(next_player.name, next_player.get_my_left(), next_player.get_my_right()))
+        logger.info("Current status for player {}: Left hand {}, Right hand {}".format(current_player.name, current_player.get_my_left(), current_player.get_my_right()))
         while not self.player_a.is_empty() and not self.player_b.is_empty() and self.current_round < GAME_LIMIT:
+            logger.info("=== MOVE #{} ===".format(self.current_round))
             logger.info("Current player: {}".format(current_player.name))
             move = current_player.move()
             logger.info("Player {} plays {}".format(current_player.name, "SWITCH {} {}".format(move[0], move[1]) if type(move) == tuple else move.value))

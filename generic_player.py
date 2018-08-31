@@ -43,6 +43,12 @@ class GenericPlayer:
         self._current_round += 1
         self._history.append(move)
     
+    def restart(self):
+        self._my_left_hand = 1
+        self._my_right_hand = 1
+        self._opponent_left_hand = 1
+        self._opponent_right_hand = 1
+    
     def get_my_right(self):
         return self._my_right_hand
     
