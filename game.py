@@ -47,7 +47,7 @@ class Game():
         elif type(move) == tuple:
             if move[0] + move[1] != current_player.get_my_left() + current_player.get_my_right():
                 raise Exception("Player {} wants to switch hands to {} {} which does not equal current status of {} {} fingers.".format(current_player.name, move[0], move[1], current_player.get_my_left(), current_player.get_my_right()))
-            elif move[0] > 5 or move[1] > 5:
+            elif move[0] >= 5 or move[1] >= 5:
                 raise Exception("Player {} wants to switch hands to {} {} where one hand has more than 5 fingers.".format(current_player.name, current_player.get_my_left(), current_player.get_my_right()))
             elif move[0] == current_player.get_my_left() and move[1] == current_player.get_my_right():
                 raise Exception("Player {} wants to switch hands to {} {} which is the same as current status of {} {} fingers.".format(current_player.name, move[0], move[1], current_player.get_my_left(), current_player.get_my_right()))
