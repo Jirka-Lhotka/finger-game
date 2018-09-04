@@ -1,9 +1,10 @@
 from game import Game
-from custom_player import custom_player
-from test_player import test_player
+from perfect_player import perfect_player
+from random_player import test_player
+from custom_player_blue import custom_player_blue
 
-player_a = first_player = custom_player
-player_b = second_player = test_player
+player_a = first_player = perfect_player
+player_b = second_player = custom_player_blue
 game = Game(player_a, player_b)
 result = {
     player_a.name: 0,
@@ -11,7 +12,7 @@ result = {
     "ties": 0
 }
 
-for i in range(0, 1):
+for i in range(0, 1000):
     print("===== GAME {} =====".format(i))
     winner = game.play(first_player=first_player, second_player=second_player)
     print("\n")
